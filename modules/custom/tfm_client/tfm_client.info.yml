@@ -1,0 +1,5 @@
+name: TFM Client
+type: module
+description: Client 
+core_version_requirement: ^8.8 || ^9
+package: Custom

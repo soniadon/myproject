@@ -1,0 +1,17 @@
+name: sphynx theme
+description: 'sphynx is a simple drupal theme'
+type: theme
+base theme: olivero
+version: 1.x
+core_version_requirement: ^9.2 || ^10
+package: Core
+libraries:
+  - sphynx/global-styling
+regions: 
+  header: 'Header'
+  sidebar: 'Sidebar'
+  content: 'Main Content'
+  footer: 'Footer'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'
+  

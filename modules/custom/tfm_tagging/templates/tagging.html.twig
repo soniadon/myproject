@@ -1,0 +1,56 @@
+{#
+/**
+ * @file tagging.html.twig
+ * Default theme implementation to present Tagging data.
+ *
+ * This template is used when viewing Tagging pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_tagging()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if content %}
+<div{{ attributes.addClass('tagging') }}>
+<div class="row tagging-view">
+   {% if content.project_id or content.name or content.project_tag_code or content.start_date or content.end_date %}
+   <div class="content-first-col col-md-6">
+      {% if content.project_id %}
+      {{content.project_id}}
+      {% endif %}
+      {% if content.name %}
+      {{content.name}}
+      {% endif %}
+      {% if content.project_tag_code %}
+      {{content.project_tag_code}}
+      {% endif %}
+      {% if content.start_date %}
+      {{content.start_date}}
+      {% endif %}
+      {% if content.end_date %}
+      {{content.end_date}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if content.so_code or content.location or content.grade %}
+   <div class="content-first-col col-md-6">
+      {% if content.so_code %}
+      {{content.so_code}}
+      {% endif %}
+      {% if content.location %}
+      {{content.location}}
+      {% endif %}
+      {% if content.grade %}
+      {{content.grade}}
+      {% endif %}
+   </div>
+   {% endif %}
+</div>
+</div>
+{% endif %}

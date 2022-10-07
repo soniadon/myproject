@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  {% if content %}
+  <table>
+    <tr>
+      <td>{{ content.field_emp_name }}</td>
+      <td>{{ content.field_account_availability }}</td>
+    </tr>
+    <tr> 
+      <td>{{ content.field_emp_id }}</td>
+      <td>{{ content.field_delivery_bu }}</td>
+    </tr>
+    <tr> 
+      <td>{{ content.field_delivery_region }}</td>
+      <td>{{ content.field_domain }}</td>
+    </tr>
+     <tr> 
+      <td>{{ content.field_final_grade }}</td>
+      <td>{{ content.field_grade }}</td>
+    </tr>
+    <tr> 
+      <td>{{ content.field_location }}</td>
+      <td>{{ content.field_ou_code }}</td>
+    </tr>
+    <tr> 
+      <td>{{ content.field_primary_skill }}</td>
+      <td>{{ content.field_resource_current_status }}</td>
+    </tr>
+    <tr> 
+      <td>{{ content.field_secondary_skill }}</td>
+      <td>{{ content.field_sector_country }}</td>
+    </tr>
+    <tr> 
+      <td>{{ content.field_service_line }}</td>
+      <td>{{ content.field_sub_location }}</td>
+    </tr>
+
+</table>
+  {{ content.field_non_deployable }}
+  
+  
+  {% endif %}
+</article>

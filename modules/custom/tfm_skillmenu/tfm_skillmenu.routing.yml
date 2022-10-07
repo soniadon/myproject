@@ -1,0 +1,8 @@
+tfm_skillmenu.default:
+  path: '/skillmenu'
+  defaults:
+    _controller: '\Drupal\tfm_skillmenu\Controller\SkillmenuController::index'
+    _title: 'Primary Skill'
+  requirements:
+    _permission: 'access content'
+   

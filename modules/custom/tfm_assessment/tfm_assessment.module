@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains tfm_assessment.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tfm_assessment_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the tfm_assessment module.
+    case 'help.page.tfm_assessment':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Assessment') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tfm_assessment_theme() {
+  $theme = [];
+  $theme['assessment'] = array(
+    'render element' => 'elements',
+    'file' => 'assessment.page.inc',
+    'template' => 'assessment',
+  );
+  $theme['assessment_form'] = array(
+    'render element' => 'form',
+    'file' => 'assessment.page.inc',
+    'template' => 'assessment-form',
+  );
+  return $theme;
+}

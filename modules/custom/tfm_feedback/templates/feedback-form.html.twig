@@ -1,0 +1,44 @@
+{#
+/**
+ * @file feedback-form.html.twig
+ * Default theme implementation to present feedback Form data.
+ *
+ * This template is used when viewing feedback Add/Edit pages.
+ *
+ *
+ * Available variables:
+ * - form: A list of form items. Use 'form' to print all form items, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_feedback()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if form %}
+<div{{ attributes.addClass('feedback') }}>
+<div class="row rmp-feedback-form">
+   {{ form.form_build_id }}
+   {{ form.form_token }}
+   {{ form.form_id }}
+   {% if form.employee_name or form.mentor_name or form.comments %}
+   <div class="form-first-col col-md-6">
+      {% if form.employee_name %}
+      {{form.employee_name}}
+      {% endif %}
+      {% if form.mentor_name %}
+      {{form.mentor_name}}
+      {% endif %}
+      {% if form.comments %}
+      {{form.comments}}
+      {% endif %}
+   </div>
+   {% endif %}
+  
+   {% if form.actions %}
+   {{ form.actions.submit }}
+   {% endif %}
+</div>
+</div>
+{% endif %}

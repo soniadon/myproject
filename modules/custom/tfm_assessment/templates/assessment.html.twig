@@ -1,0 +1,50 @@
+{#
+/**
+ * @file assessment.html.twig
+ * Default theme implementation to present assessment data.
+ *
+ * This template is used when viewing assessment pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_assessment()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if content %}
+<div{{ attributes.addClass('assessment') }}>
+<div class="row assessment-view">
+   {% if content.name or content.assessment_date or content.assessment_methodology %}
+   <div class="content-first-col col-md-6">
+      {% if content.name %}
+      {{content.name}}
+      {% endif %}
+      {% if content.assessment_date %}
+      {{content.assessment_date}}
+      {% endif %}
+      {% if content.assessment_methodology %}
+      {{content.assessment_methodology}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if content.assessment_score or content.assessment_status or content.areas_of_improvement  %}
+   <div class="content-second-col col-md-6">
+      {% if content.assessment_score %}
+      {{content.assessment_score}}
+      {% endif %}
+      {% if content.assessment_status %}
+      {{content.assessment_status}}
+      {% endif %}
+      {% if content.areas_of_improvement %}
+      {{content.areas_of_improvement}}
+      {% endif %}
+   </div>
+   {% endif %}
+</div>
+</div>
+{% endif %}

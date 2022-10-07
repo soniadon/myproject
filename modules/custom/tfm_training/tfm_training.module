@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains tfm_training.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tfm_training_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the tfm_training module.
+    case 'help.page.tfm_training':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('training') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tfm_training_theme() {
+  $theme = [];
+  $theme['training'] = array(
+    'render element' => 'elements',
+    'file' => 'training.page.inc',
+    'template' => 'training',
+  );
+  $theme['training_form'] = array(
+    'render element' => 'form',
+    'file' => 'training.page.inc',
+    'template' => 'training-form',
+  );
+  return $theme;
+}

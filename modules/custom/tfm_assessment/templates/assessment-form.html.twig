@@ -1,0 +1,56 @@
+{#
+/**
+ * @file assessment-form.html.twig
+ * Default theme implementation to present assessment Form data.
+ *
+ * This template is used when viewing assessment Add/Edit pages.
+ *
+ *
+ * Available variables:
+ * - form: A list of form items. Use 'form' to print all form items, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_assessment()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if form %}
+<div{{ attributes.addClass('assessment') }}>
+<div class="row rmp-assessment-form">
+   {{ form.form_build_id }}
+   {{ form.form_token }}
+   {{ form.form_id }}
+   {% if form.name or form.assessment_date or form.assessment_methodology %}
+   <div class="form-first-col col-md-6">
+      {% if form.name %}
+      {{form.name}}
+      {% endif %}
+      {% if form.assessment_date %}
+      {{form.assessment_date}}
+      {% endif %}
+      {% if form.assessment_methodology %}
+      {{form.assessment_methodology}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if form.assessment_score or form.assessment_status or form.areas_of_improvement  %}
+   <div class="form-second-col col-md-6">
+      {% if form.assessment_score %}
+      {{form.assessment_score}}
+      {% endif %}
+      {% if form.assessment_status %}
+      {{form.assessment_status}}
+      {% endif %}
+      {% if form.areas_of_improvement %}
+      {{form.areas_of_improvement}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if form.actions %}
+   {{ form.actions.submit }}
+   {% endif %}
+</div>
+</div>
+{% endif %}

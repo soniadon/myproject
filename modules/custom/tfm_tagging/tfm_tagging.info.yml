@@ -1,0 +1,7 @@
+name: TFM Tagging
+type: module
+description: Tagging 
+core_version_requirement: ^8.8 || ^9
+package: Custom
+dependencies:
+  - tfm_project

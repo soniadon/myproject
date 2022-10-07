@@ -1,0 +1,14 @@
+
+# Assessment menu items definition
+entity.assessment.collection:
+  title: 'Assessment list'
+  route_name: entity.assessment.collection
+  description: 'List Assessment entities'
+  parent: system.admin_structure
+  weight: 100
+
+assessment.admin.structure.settings:
+  title: Assessment settings
+  description: 'Configure Assessment entities'
+  route_name: assessment.settings
+  parent: system.admin_structure

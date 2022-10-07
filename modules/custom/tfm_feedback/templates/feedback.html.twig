@@ -1,0 +1,38 @@
+{#
+/**
+ * @file feedback.html.twig
+ * Default theme implementation to present feedback data.
+ *
+ * This template is used when viewing feedback pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_feedback()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if content %}
+<div{{ attributes.addClass('feedback') }}>
+<div class="row feedback-view">
+   {% if content.employee_name or content.mentor_name or content.comments %}
+   <div class="content-first-col col-md-6">
+      {% if content.employee_name %}
+      {{content.employee_name}}
+      {% endif %}
+      {% if content.mentor_name %}
+      {{content.mentor_name}}
+      {% endif %}
+      {% if content.comments %}
+      {{content.comments}}
+      {% endif %}
+   </div>
+   {% endif %}
+   
+</div>
+</div>
+{% endif %}

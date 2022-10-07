@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.project.canonical:
+  path: '/project/{project}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the contact entity
+    _entity_view: 'project'
+    _title: 'TFM Project Allocation'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'project.view'
+
+entity.project.collection:
+  path: '/project/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'project'
+    _title: 'TFM Project List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer contact entity'
+
+entity.project.add_form:
+  path: '/project/add'
+  defaults:
+  # Calls the form.add controller, defined in the contact entity.
+    _entity_form: project.add
+    _title: 'Add Project'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.project.edit_form:
+  path: '/project/{project}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: project.edit
+    _title: 'Edit Project'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.project.delete_form:
+  path: '/contact/{project}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: project.delete
+    _title: 'Delete Project'
+  requirements:
+    _permission: 'administer site configuration'
+
+project.project_settings:
+  path: 'admin/structure/project_settings'
+  defaults:
+    _form: '\Drupal\tfm_project\Form\ProjectSettingsForm'
+    _title: 'Project Settings'
+  requirements:
+    _permission: 'administer project entity'

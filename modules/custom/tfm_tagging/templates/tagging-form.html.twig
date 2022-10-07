@@ -1,0 +1,62 @@
+{#
+/**
+ * @file tagging-form.html.twig
+ * Default theme implementation to present tagging Form data.
+ *
+ * This template is used when viewing tagging Add/Edit pages.
+ *
+ *
+ * Available variables:
+ * - form: A list of form items. Use 'form' to print all form items, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_tagging()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if form %}
+<div{{ attributes.addClass('tagging') }}>
+<div class="row tfm-tagging-form">
+   {{ form.form_build_id }}
+   {{ form.form_token }}
+   {{ form.form_id }}
+   {% if form.project_id or form.name or form.project_tag_code or form.start_date or form.end_date %}
+   <div class="form-first-col col-md-6">
+      {% if form.project_id %}
+      {{form.project_id}}
+      {% endif %}
+      {% if form.name %}
+      {{form.name}}
+      {% endif %}
+      {% if form.project_tag_code %}
+      {{form.project_tag_code}}
+      {% endif %}
+      {% if form.start_date %}
+      {{form.start_date}}
+      {% endif %}
+      {% if form.end_date %}
+      {{form.end_date}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if form.so_code or form.location or form.grade %}
+   <div class="form-second-col col-md-6">
+      {% if form.so_code %}
+      {{form.so_code}}
+      {% endif %}
+      {% if form.location %}
+      {{form.location}}
+      {% endif %}
+      {% if form.grade %}
+      {{form.grade}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if form.actions %}
+   {{ form.actions.submit }}
+   {% endif %}
+</div>
+</div>
+{% endif %}

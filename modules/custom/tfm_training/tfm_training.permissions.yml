@@ -1,0 +1,22 @@
+add training entities:
+  title: 'Create new Training entities'
+
+administer training entities:
+  title: 'Administer Training entities'
+  description: 'Allow to access the administration form to configure Training entities.'
+  restrict access: true
+
+delete training entities:
+  title: 'Delete Training entities'
+
+edit training entities:
+  title: 'Edit Training entities'
+
+access training overview:
+  title: 'Access the Training overview page'
+
+view published training entities:
+  title: 'View published Training entities'
+
+view unpublished training entities:
+  title: 'View unpublished Training entities'

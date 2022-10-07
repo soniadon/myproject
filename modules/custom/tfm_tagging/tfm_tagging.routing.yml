@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.tagging.canonical:
+  path: '/tagging/{tagging}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the tagging entity
+    _entity_view: 'tagging'
+    _title: 'TFM tagging'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'tagging.view'
+
+entity.tagging.collection:
+  path: '/tagging/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the tagging entity.
+    _entity_list: 'tagging'
+    _title: 'Tagging List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer tagging entity'
+
+tagging.tagging_add:
+  path: '/tagging/add'
+  defaults:
+  # Calls the form.add controller, defined in the tagging entity.
+    _entity_form: tagging.add
+    _title: 'Add tagging'
+  requirements:
+     _permission: 'administer site configuration'
+
+entity.tagging.edit_form:
+  path: '/tagging/{tagging}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the tagging entity.
+    _entity_form: tagging.edit
+    _title: 'Edit tagging'
+  requirements:
+     _permission: 'administer site configuration'
+
+entity.tagging.delete_form:
+  path: '/tagging/{tagging}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the tagging entity.
+    _entity_form: tagging.delete
+    _title: 'Delete tagging'
+  requirements:
+     _permission: 'administer site configuration'
+
+tagging.tagging_settings:
+  path: 'admin/structure/tagging_settings'
+  defaults:
+    _form: '\Drupal\tagging\Form\taggingSettingsForm'
+    _title: 'tagging Settings'
+  requirements:
+    _permission: 'administer tagging entity'

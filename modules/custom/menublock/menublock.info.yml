@@ -1,0 +1,7 @@
+name: Menublock
+type: module
+core_version_requirement: ^9 || ^10
+description: 'Menublock'
+package: Custom
+dependencies:
+  - block

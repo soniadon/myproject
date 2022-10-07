@@ -1,0 +1,5 @@
+name: TFM Project Allocation 
+type: module
+description: Project Allocation 
+core_version_requirement: ^8.8 || ^9
+package: Custom

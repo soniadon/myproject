@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.client.canonical:
+  path: '/client/{client}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the client entity
+    _entity_view: 'client'
+    _title: 'TFM client'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'client.view'
+
+entity.client.collection:
+  path: '/client/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the client entity.
+    _entity_list: 'client'
+    _title: 'Client List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer client entity'
+
+client.client_add:
+  path: '/client/add'
+  defaults:
+  # Calls the form.add controller, defined in the client entity.
+    _entity_form: client.add
+    _title: 'Add client'
+  requirements:
+     _permission: 'administer site configuration'
+
+entity.client.edit_form:
+  path: '/client/{client}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the client entity.
+    _entity_form: client.edit
+    _title: 'Edit client'
+  requirements:
+     _permission: 'administer site configuration'
+
+entity.client.delete_form:
+  path: '/client/{client}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the client entity.
+    _entity_form: client.delete
+    _title: 'Delete client'
+  requirements:
+     _permission: 'administer site configuration'
+
+client.client_settings:
+  path: 'admin/structure/client_settings'
+  defaults:
+    _form: '\Drupal\client\Form\clientSettingsForm'
+    _title: 'client Settings'
+  requirements:
+    _permission: 'administer client entity'

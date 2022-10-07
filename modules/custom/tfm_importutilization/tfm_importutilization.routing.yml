@@ -1,0 +1,14 @@
+tfm_importutilization.import_excel:
+  path: '/read/importutilization'
+  defaults:
+    _title: 'Upload Utilization Sheet'
+    _form: '\Drupal\tfm_importutilization\Form\ImportexcelForm'
+  requirements:
+    _permission: 'Import form'
+tfm_importutilization.waffy:
+  path: '/waffy'
+  defaults:
+    _controller: '\Drupal\tfm_importutilization\Controller\DefaultController::waffy'
+    _title: 'Bharath'
+  requirements:
+    _permission: 'access content'

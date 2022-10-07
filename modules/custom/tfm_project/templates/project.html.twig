@@ -1,0 +1,53 @@
+{#
+/**
+ * @file project.html.twig
+ * Default theme implementation to present Project data.
+ *
+ * This template is used when viewing Project pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_project()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if content %}
+<div{{ attributes.addClass('project') }}>
+<div class="row project-view">
+   {% if content.name or content.account_name or content.client_name or content.project_manager or content.technology or content.start_date or content.end_date or content.country %}
+   <div class="content-first-col col-md-6">
+    {% if content.name %}
+      {{content.name}}
+      {% endif %}
+      {% if content.account_name %}
+      {{content.account_name}}
+      {% endif %}
+      {% if content.client_name %}
+      {{content.client_name}}
+      {% endif %}
+      {% if content.project_manager %}
+      {{content.project_manager}}
+      {% endif %}
+      {% if content.content.technology %}
+      {{content.content.technology}}
+      {% endif %}
+      {% if content.start_date %}
+      {{content.start_date}}
+      {% endif %}
+      {% if content.end_date %}
+      {{content.end_date}}
+      {% endif %}
+      {% if content.country %}
+      {{content.country}}
+      {% endif %}
+   </div>
+   {% endif %}
+</div>
+</div>
+{% endif %}
+
+

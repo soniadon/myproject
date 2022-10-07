@@ -1,0 +1,14 @@
+
+# Training menu items definition
+entity.training.collection:
+  title: 'Training list'
+  route_name: entity.training.collection
+  description: 'List Training entities'
+  parent: system.admin_structure
+  weight: 100
+
+training.admin.structure.settings:
+  title: Training settings
+  description: 'Configure Training entities'
+  route_name: training.settings
+  parent: system.admin_structure

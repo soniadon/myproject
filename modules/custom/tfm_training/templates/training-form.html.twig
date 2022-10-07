@@ -1,0 +1,59 @@
+{#
+/**
+ * @file training-form.html.twig
+ * Default theme implementation to present training Form data.
+ *
+ * This template is used when viewing training Add/Edit pages.
+ *
+ *
+ * Available variables:
+ * - form: A list of form items. Use 'form' to print all form items, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_training()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if form %}
+<div{{ attributes.addClass('training') }}>
+<div class="row tfm-training-form">
+   {{ form.form_build_id }}
+   {{ form.form_token }}
+   {{ form.form_id }}
+   {% if form.name or form.training_objectives %}
+   <div class="form-first-col col-md-6">
+      {% if form.training_objectives %}
+      {{form.training_objectives}}
+      {% endif %}
+      {% if form.name %}
+      {{form.name}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if form.no_of_employees or form.duration or form.evaluation or form.mentor or form.requisites %}
+   <div class="form-second-col col-md-6">
+      {% if form.no_of_employees %}
+      {{form.no_of_employees}}
+      {% endif %}
+      {% if form.duration %}
+      {{form.duration}}
+      {% endif %}
+      {% if form.evaluation %}
+      {{form.evaluation}}
+      {% endif %}
+      {% if form.mentor %}
+      {{form.mentor}}
+      {% endif %}
+      {% if form.requisites %}
+      {{form.requisites}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if form.actions %}
+   {{ form.actions.submit }}
+   {% endif %}
+</div>
+</div>
+{% endif %}

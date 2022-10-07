@@ -1,0 +1,14 @@
+{
+  "name": "drupal/tfm_assessment",
+  "type": "drupal-module",
+  "description": "Assessment",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/tfm_assessment",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/tfm_assessment",
+    "source": "http://cgit.drupalcode.org/tfm_assessment"
+  },
+  "require": { }
+}

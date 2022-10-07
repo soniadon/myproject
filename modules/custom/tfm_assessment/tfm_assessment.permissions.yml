@@ -1,0 +1,22 @@
+add assessment entities:
+  title: 'Create new Assessment entities'
+
+administer assessment entities:
+  title: 'Administer Assessment entities'
+  description: 'Allow to access the administration form to configure Assessment entities.'
+  restrict access: true
+
+delete assessment entities:
+  title: 'Delete Assessment entities'
+
+edit assessment entities:
+  title: 'Edit Assessment entities'
+
+access assessment overview:
+  title: 'Access the Assessment overview page'
+
+view published assessment entities:
+  title: 'View published Assessment entities'
+
+view unpublished assessment entities:
+  title: 'View unpublished Assessment entities'

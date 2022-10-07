@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains tfm_feedback.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function tfm_feedback_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the tfm_feedback module.
+    case 'help.page.tfm_feedback':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Feedback') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function tfm_feedback_theme() {
+  $theme = [];
+  $theme['feedback'] = array(
+    'render element' => 'elements',
+    'file' => 'feedback.page.inc',
+    'template' => 'feedback',
+  );
+  $theme['feedback_form'] = array(
+    'render element' => 'form',
+    'file' => 'feedback.page.inc',
+    'template' => 'feedback-form',
+  );
+  return $theme;
+}

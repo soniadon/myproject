@@ -1,0 +1,22 @@
+# Assessment routing definition
+assessment.settings_tab:
+  route_name: assessment.settings
+  title: 'Settings'
+  base_route: assessment.settings
+
+entity.assessment.canonical:
+  route_name: entity.assessment.canonical
+  base_route: entity.assessment.canonical
+  title: 'View'
+
+entity.assessment.edit_form:
+  route_name: entity.assessment.edit_form
+  base_route: entity.assessment.canonical
+  title: 'Edit'
+
+entity.assessment.delete_form:
+  route_name:  entity.assessment.delete_form
+  base_route:  entity.assessment.canonical
+  title: Delete
+  weight: 10
+

@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.feedback.canonical:
+  path: '/feedback/{feedback}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the feedback entity
+    _entity_view: 'feedback'
+    _title: 'TFM Feedback'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'feedback.view'
+
+entity.feedback.collection:
+  path: '/feedback/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the feedback entity.
+    _entity_list: 'feedback'
+    _title: 'Feedback List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer feedback entity'
+
+feedback.feedback_add:
+  path: '/feedback/add'
+  defaults:
+  # Calls the form.add controller, defined in the feedback entity.
+    _entity_form: feedback.add
+    _title: 'Add Feedback'
+  requirements:
+     _permission: 'administer site configuration'
+
+entity.feedback.edit_form:
+  path: '/feedback/{feedback}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the feedback entity.
+    _entity_form: feedback.edit
+    _title: 'Edit Feedback'
+  requirements:
+     _permission: 'administer site configuration'
+
+entity.feedback.delete_form:
+  path: '/feedback/{feedback}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the feedback entity.
+    _entity_form: feedback.delete
+    _title: 'Delete Feedback'
+  requirements:
+     _permission: 'administer site configuration'
+
+feedback.feedback_settings:
+  path: 'admin/structure/feedback_settings'
+  defaults:
+    _form: '\Drupal\feedback\Form\FeedbackSettingsForm'
+    _title: 'Feedback Settings'
+  requirements:
+    _permission: 'administer feedback entity'

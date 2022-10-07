@@ -1,0 +1,5 @@
+entity.training.add_form:
+  route_name: entity.training.add_form
+  title: 'Add Training Details'
+  appears_on:
+    - entity.training.collection

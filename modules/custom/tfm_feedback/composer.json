@@ -1,0 +1,14 @@
+{
+  "name": "drupal/tfm_feedback",
+  "type": "drupal-module",
+  "description": "Feedback",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/tfm_feedback",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/tfm_feedback",
+    "source": "http://cgit.drupalcode.org/tfm_feedback"
+  },
+  "require": { }
+}

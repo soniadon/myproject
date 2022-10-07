@@ -1,0 +1,58 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in several places; e.g. links, redirects, and local
+# actions.
+entity.training.canonical:
+  path: '/training/{training}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the contact entity
+    _entity_view: 'training'
+    _title: 'TFM Training View'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'training.view'
+
+entity.training.collection:
+  path: '/training/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'training'
+    _title: 'TFM Training List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'administer contact entity'
+
+entity.training.add_form:
+  path: '/training/add'
+  defaults:
+  # Calls the form.add controller, defined in the contact entity.
+    _entity_form: training.add
+    _title: 'Add Training'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.training.edit_form:
+  path: '/training/{training}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: training.edit
+    _title: 'Edit Training'
+  requirements:
+    _permission: 'administer site configuration'
+
+entity.training.delete_form:
+  path: '/training/{training}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: training.delete
+    _title: 'Delete Training'
+  requirements:
+    _permission: 'administer site configuration'
+
+training.training_settings:
+  path: 'admin/structure/training_settings'
+  defaults:
+    _form: '\Drupal\tfm_training\Form\TrainingSettingsForm'
+    _title: 'Training Settings'
+  requirements:
+    _permission: 'administer training entity'

@@ -1,0 +1,5 @@
+entity.assessment.add_form:
+  route_name: entity.assessment.add_form
+  title: 'Add assessment'
+  appears_on:
+    - entity.assessment.collection

@@ -1,0 +1,5 @@
+name: TFM Training
+type: module
+description: Training  
+core_version_requirement: ^8.8 || ^9
+package: Custom

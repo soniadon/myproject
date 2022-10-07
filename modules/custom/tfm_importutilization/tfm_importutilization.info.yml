@@ -1,0 +1,6 @@
+name: TFM Import Utilization
+description: This is tfm_importutilization
+core_version_requirement : ^8 || ^9
+version: 1.X
+type: module
+package: Custom

@@ -1,0 +1,9 @@
+tfm_skillmenu.default:
+  title: 'Skill Menus'
+  description: 'primary skill menus and menu links.'
+  route_name: tfm_skillmenu.default
+  weight: -1
+  menu_name: main
+ # class: Drupal\tfm_skillmenu\Plugin\Menu\SkillMenuLink
+
+ 

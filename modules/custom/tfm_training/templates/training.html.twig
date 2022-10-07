@@ -1,0 +1,53 @@
+{#
+/**
+ * @file training.html.twig
+ * Default theme implementation to present Training data.
+ *
+ * This template is used when viewing Training pages.
+ *
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ * - attributes: HTML attributes for the container element.
+ *
+ * @see template_preprocess_training()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if content %}
+<div{{ attributes.addClass('training') }}>
+<div class="row training-view">
+   {% if content.name or content.training_objectives %}
+   <div class="content-first-col col-md-6">  
+      {% if content.training_objectives %}
+      {{content.training_objectives}}
+      {% endif %}
+      {% if content.name %}
+      {{content.name}}
+      {% endif %}
+   </div>
+   {% endif %}
+   {% if content.no_of_employees or content.duration or content.evaluation or content.mentor or content.requisites %}
+   <div class="content-second-col col-md-6">
+      {% if content.no_of_employees %}
+      {{content.no_of_employees}}
+      {% endif %}
+      {% if content.duration %}
+      {{content.duration}}
+      {% endif %}
+      {% if content.evaluation %}
+      {{content.evaluation}}
+      {% endif %}
+      {% if content.mentor %}
+      {{content.mentor}}
+      {% endif %}
+      {% if content.requisites %}
+      {{content.requisites}}
+      {% endif %}
+   </div>
+   {% endif %}
+</div>
+</div>
+{% endif %}

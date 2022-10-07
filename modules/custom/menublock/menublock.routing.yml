@@ -1,0 +1,7 @@
+menublock_page:
+  path: '/skills'
+  defaults:
+    _block: '\Drupal\menublock\Plugin\Block\MenuBlock'
+    _title: 'My Menu block'
+  requirements:
+    _permission: 'access content'
